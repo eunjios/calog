@@ -10,7 +10,7 @@
 
 ## Goals
 
-1. 재사용이 **쉬운** 컴포넌트 설계 (`components/ui`)
+1. 재사용이 **쉬운** 컴포넌트 설계 ([components/ui](components/ui/) 폴더)
 2. Server-side Rendering (SSR) 및 Static Site Generation 적합한 곳에 사용하기
 3. 인증 구현
 
