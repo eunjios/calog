@@ -1,0 +1,34 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1024px;
+  height: calc(100% - 80px);
+  min-height: 512px;
+  padding-bottom: 8px;
+}
+
+.main div:nth-child(1) {
+  flex-shrink: 0;
+}
+
+.main div:nth-child(2) {
+  flex-grow: 1;
+}
+
+@media (max-width: 768px) {
+  .main {
+    flex-direction: column;
+    width: 100%;
+    padding: 32px 16px 16px;
+  }
+}

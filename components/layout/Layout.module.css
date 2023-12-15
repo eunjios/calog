@@ -1,0 +1,24 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.main {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 768px;
+  flex-grow: 1;
+  overflow-y: scroll;
+}
+
+/* TODO: 감싸는 div로 스크롤바 보이게 */
+.main::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+@media (max-width: 768px) {
+  .main {
+    width: fit-content;
+  }
+}

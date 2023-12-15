@@ -1,0 +1,32 @@
+.container {
+  padding: 16px 0;
+  display: flex;
+  border-bottom: 1.2px solid #f4f4f4;
+}
+
+.thumbnail {
+  object-fit: cover;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border: 1.2px solid #f4f4f4;
+  border-radius: 100%;
+  margin-right: 8px;
+}
+
+.post {
+  width: 128px;
+  height: 128px;
+  border: 0;
+  border-radius: 16px;
+  margin-right: 32px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  color: #333;
+}

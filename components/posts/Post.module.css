@@ -1,0 +1,17 @@
+.item {
+  margin: 0;
+}
+
+.title {
+  margin-bottom: 8px;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.description {
+  margin-bottom: 16px;
+  font-size: 14px;
+  line-height: 26px;
+  height: 76px;
+  overflow-y: hidden;
+}

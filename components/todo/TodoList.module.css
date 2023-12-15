@@ -1,0 +1,16 @@
+.todo-li {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 14px;
+  line-height: 26px;
+  font-weight: 500;
+  color: #333;
+}
+
+.done {
+  color: #8f8f8f;
+  text-decoration: line-through;
+  text-decoration-thickness: 1.4px;
+}
