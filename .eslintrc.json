@@ -4,18 +4,14 @@
     "es6": true,
     "node": true
   },
-  "parser": "babel-eslint",
   "extends": [
+    "next/core-web-vitals",
     "eslint:recommended",
     "plugin:react/recommended",
-    "airbnb",
-    "plugin:prettier/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
   ],
-  "settings": {
-    "react": {
-      "version": "detect"
-    }
-  },
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -23,15 +19,18 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": ["react", "react-hooks", "prettier"],
+  "plugins": ["react", "@typescript-eslint", "prettier"],
   "rules": {
-    "react/react-in-jsx-scope": 0,
-    "react/prefer-stateless-function": 0,
-    "react/jsx-filename-extension": 0,
-    "react/jsx-one-expression-per-line": 0,
-    "no-nested-ternary": 0
+    "react/react-in-jsx-scope": "off", // import React from 'react' OFF
+    "@typescript-eslint/no-unused-vars": "error", // 안 쓰는 변수 사용시 ERROR
+    "@typescript-eslint/no-explicit-any": "error" // any 사용시 ERROR
   },
   "globals": {
     "React": "writable"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }
