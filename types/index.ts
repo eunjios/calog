@@ -12,3 +12,18 @@ export interface UserInfo {
   username: string;
   avatar: string;
 }
+
+export interface TodoInfo {
+  id: number;
+  text: string;
+  done: boolean;
+}
+
+export interface TodoListInfo {
+  date: string;
+  todoList: TodoInfo[];
+  totalCount: number;
+  doneCount: number;
+  completedTodoList: TodoInfo[];
+  uncompletedTodoList: TodoInfo[];
+}

@@ -1,18 +1,29 @@
 import Link from 'next/link';
 import classes from './HoverBlurCard.module.css';
+import Image from 'next/image';
 
 interface Props {
   imgSrc: string;
-  alt?: string;
+  imgAlt?: string;
   href?: string;
   children?: React.ReactNode;
 }
 
-const HoverBlurCard: React.FC<Props> = ({ imgSrc, alt, href, children }) => {
+const HoverBlurCard: React.FC<Props> = ({
+  imgSrc,
+  imgAlt,
+  href,
+  children,
+}: Props) => {
   const Card = (
     <div className={classes.container}>
       <div className={classes.card}>
-        <img src={imgSrc} alt={alt ?? '카드 이미지'} />
+        <Image
+          src={imgSrc}
+          alt={imgAlt ?? '카드 이미지'}
+          width={360}
+          height={360}
+        />
       </div>
       <div className={classes.content}>{children}</div>
     </div>

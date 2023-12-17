@@ -1,7 +1,6 @@
 import Layout from '@/components/layout/Layout';
 import Intro from '@/components/main/Intro';
 import Head from 'next/head';
-import Image from 'next/image';
 
 export default function Home() {
   return (

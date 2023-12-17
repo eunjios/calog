@@ -1,7 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import PostDetail from '../../components/posts/PostDetail';
-import { DUMMY_POSTS } from '../../utils';
+import { DUMMY_POSTS } from '../../utils/data';
 import { PostInfo } from '../../types';
 import Layout from '@/components/layout/Layout';
 
@@ -9,7 +9,7 @@ interface Props {
   post: PostInfo;
 }
 
-const PostDetailPage: React.FC<Props> = ({ post }) => {
+const PostDetailPage: React.FC<Props> = ({ post }: Props) => {
   const { title, description } = post;
   return (
     <>

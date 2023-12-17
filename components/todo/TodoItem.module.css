@@ -7,6 +7,8 @@
   line-height: 26px;
   font-weight: 500;
   color: #333;
+  width: fit-content;
+  cursor: pointer;
 }
 
 .done {

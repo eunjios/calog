@@ -3,14 +3,15 @@ import PostCalendar from '../calendar/PostCalendar';
 import Todo from '../todo/Todo';
 import Post from './Post';
 import classes from './Calog.module.css';
+import { RecoilRoot } from 'recoil';
 
 interface Props {
   posts: PostInfo[];
 }
 
-const Calog: React.FC<Props> = ({ posts }) => {
+const Calog: React.FC<Props> = ({ posts }: Props) => {
   return (
-    <>
+    <RecoilRoot>
       <PostCalendar />
       <div className={classes.container}>
         <Todo />
@@ -20,7 +21,7 @@ const Calog: React.FC<Props> = ({ posts }) => {
           ))}
         </ul>
       </div>
-    </>
+    </RecoilRoot>
   );
 };
 

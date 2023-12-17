@@ -6,7 +6,7 @@ interface Props {
   post: PostInfo;
 }
 
-const PostDetail: React.FC<Props> = ({ post }) => {
+const PostDetail: React.FC<Props> = ({ post }: Props) => {
   const { title, image, description } = post;
   const { author } = post;
 

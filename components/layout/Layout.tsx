@@ -7,7 +7,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-const Layout: React.FC<Props> = ({ children }) => {
+const Layout: React.FC<Props> = ({ children }: Props) => {
   return (
     <div className={classes.layout}>
       <MainNavigation />
