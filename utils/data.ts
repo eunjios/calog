@@ -1,5 +1,5 @@
 import { TodoList } from '@/recoil/todo-list/types';
-import { PostInfo, TodoInfo } from '../types';
+import { PostInfo, TodoItemData } from '../types';
 
 export const DUMMY_POSTS: PostInfo[] = [
   {
@@ -113,7 +113,7 @@ export const DUMMY_TODO_LIST: TodoList[] = [
   },
 ];
 
-export const DUMMY_SELECTED_TODO_LIST: TodoInfo[] = [
+export const DUMMY_SELECTED_TODO_LIST: TodoItemData[] = [
   {
     id: 1,
     text: '스트레칭 하기',

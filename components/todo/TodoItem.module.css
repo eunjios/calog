@@ -2,13 +2,18 @@
   display: flex;
   gap: 8px;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   font-size: 14px;
   line-height: 26px;
   font-weight: 500;
   color: #333;
   width: fit-content;
   cursor: pointer;
+}
+
+.todo-li svg {
+  height: 26px;
+  flex-shrink: 0;
 }
 
 .done {

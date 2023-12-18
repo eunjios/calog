@@ -13,17 +13,17 @@ export interface UserInfo {
   avatar: string;
 }
 
-export interface TodoInfo {
+export interface TodoItemData {
   id: number;
   text: string;
   done: boolean;
 }
 
-export interface TodoListInfo {
+export interface TodoListStats {
   date: string;
-  todoList: TodoInfo[];
+  todoList: TodoItemData[];
   totalCount: number;
   doneCount: number;
-  completedTodoList: TodoInfo[];
-  uncompletedTodoList: TodoInfo[];
+  completedTodoList: TodoItemData[];
+  uncompletedTodoList: TodoItemData[];
 }

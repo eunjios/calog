@@ -1,25 +1,27 @@
 import { useRecoilValue } from 'recoil';
 import Callout from '../ui/Callout';
 import TodoItem from './TodoItem';
-import { filteredTodoList } from '../../recoil/todo-list/selectors';
+import { todoStats } from '../../recoil/todo-list/selectors';
 import NewTodo from './NewTodo';
 import selectedDate from '@/recoil/date/atom';
-import { FaFaceSmile } from 'react-icons/fa6';
-import classes from './Todo.module.css';
+// import classes from './Todo.module.css';
+import todoState from '@/recoil/todo-list/atom';
 
 const Todo = () => {
   const { totalCount, uncompletedTodoList, completedTodoList } =
-    useRecoilValue(filteredTodoList);
+    useRecoilValue(todoStats);
   const date = useRecoilValue(selectedDate);
+
+  const state = useRecoilValue(todoState);
+  console.log(state);
 
   if (totalCount === 0) {
     return (
       <Callout>
+        {/* <div style={{ maxHeight: '80px' }}> */}
         <NewTodo key={date} />
-        <div className={classes.empty}>
-          <FaFaceSmile />
-          오늘은 할 일이 없어요
-        </div>
+        {/* <div className={classes.empty}>오늘은 할 일이 없어요</div> */}
+        {/* </div> */}
       </Callout>
     );
   }

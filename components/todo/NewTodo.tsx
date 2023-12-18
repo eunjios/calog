@@ -1,4 +1,4 @@
-import { todoRepository } from '@/recoil/todo-list/selectors';
+import { todoRepo } from '@/recoil/todo-list/selectors';
 import { FormEventHandler, useRef } from 'react';
 import { useRecoilValue } from 'recoil';
 import { MdCheckBoxOutlineBlank } from 'react-icons/md';
@@ -7,7 +7,7 @@ import ToggleVisibleButton from '../ui/ToggleVisibleButton';
 
 const NewTodo = () => {
   const todoTextRef = useRef<HTMLInputElement>(null);
-  const { add } = useRecoilValue(todoRepository);
+  const { add } = useRecoilValue(todoRepo);
 
   const submitHandler: FormEventHandler = (event) => {
     event.preventDefault();
@@ -15,7 +15,6 @@ const NewTodo = () => {
     if (text && text.trim().length > 0) {
       add(text);
       todoTextRef.current.value = '';
-      // setIsVisibleInput(false);
     }
   };
 

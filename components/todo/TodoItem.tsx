@@ -1,7 +1,7 @@
 import { MdCheckBoxOutlineBlank, MdCheckBox } from 'react-icons/md';
 import classes from './TodoItem.module.css';
 import { useRecoilValue } from 'recoil';
-import { todoRepository } from '@/recoil/todo-list/selectors';
+import { todoRepo } from '@/recoil/todo-list/selectors';
 
 interface Props {
   id: number;
@@ -10,7 +10,7 @@ interface Props {
 }
 
 const TodoItem: React.FC<Props> = ({ id, done, children }: Props) => {
-  const { toggle } = useRecoilValue(todoRepository);
+  const { toggle } = useRecoilValue(todoRepo);
   const Icon = done ? MdCheckBox : MdCheckBoxOutlineBlank;
   const className = done
     ? `${classes['todo-li']} ${classes.done}`

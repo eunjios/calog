@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 export const formattedDate = (date: string) => {
   const year = date.substring(0, 4);
   const month = date.substring(4, 6);
@@ -8,4 +10,8 @@ export const formattedDate = (date: string) => {
 
 export const truncateText = (text: string, maxLength: number) => {
   return `${text.substring(0, maxLength)}...`;
+};
+
+export const dateToString = (date: Date) => {
+  return moment(date).format('YYYYMMDD');
 };

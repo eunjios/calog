@@ -1,14 +1,11 @@
 import { atom } from 'recoil';
-// import { DUMMY_SELECTED_TODO_LIST } from '@/utils/data';
-import { TodoInfo } from '@/types';
+import { TodoList } from './types';
+import { DUMMY_TODO_LIST } from '@/utils/data';
 
-const todoListState = atom<TodoInfo[]>({
-  key: 'todoListState',
-  default: [], // TODO: 서버에서 받아오기
+const todoState = atom<TodoList[]>({
+  key: 'todoState',
+  default: DUMMY_TODO_LIST,
+  dangerouslyAllowMutability: true, // 배열 아이템 추가 가능
 });
 
-export const selectedTodoId = atom<number>({
-  key: 'selectedTodoId',
-});
-
-export default todoListState;
+export default todoState;

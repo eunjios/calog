@@ -1,39 +1,37 @@
-import { useState } from 'react';
-import classes from './ToggleVisibleButton.module.css';
+import OutsideClickHandler from 'react-outside-click-handler';
+import useEscKey from '@/hooks/useEscKey';
+import useToggleVisibility from '@/hooks/useToggleVisibility';
+import {
+  AbsoluteContainer,
+  Button,
+  Content,
+} from './ToggleVisibleButton.style';
 
 interface Props {
   children: React.ReactNode;
-  buttonText?: string;
+  showContentButtonText?: string;
+  hideContentButtonText?: string;
 }
 
 const ToggleVisibleButton: React.FC<Props> = ({
   children,
-  ...props
+  showContentButtonText = '추가',
+  hideContentButtonText = '취소',
 }: Props) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const buttonText = props.buttonText ?? '추가';
-  const toggleVisible = () => {
-    setIsVisible((prev) => !prev);
-  };
+  const { isVisible, toggle, hide } = useToggleVisibility();
 
-  if (!isVisible) {
-    return (
-      <div className={classes.new}>
-        <button className={classes.button} onClick={toggleVisible}>
-          {buttonText}
-        </button>
-      </div>
-    );
-  } else {
-    return (
-      <div className={classes.cancel}>
-        <div className={classes.content}>{children}</div>
-        <button className={classes.button} onClick={toggleVisible}>
-          x
-        </button>
-      </div>
-    );
-  }
+  useEscKey(hide);
+
+  return (
+    <OutsideClickHandler onOutsideClick={hide}>
+      {isVisible && <Content>{children}</Content>}
+      <AbsoluteContainer>
+        <Button onClick={toggle}>
+          {isVisible ? hideContentButtonText : showContentButtonText}
+        </Button>
+      </AbsoluteContainer>
+    </OutsideClickHandler>
+  );
 };
 
 export default ToggleVisibleButton;
