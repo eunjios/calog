@@ -34,7 +34,7 @@
 
 **`Callout`**
 
-```ts
+```js
 <Callout backgroundColor="#f4f4f4">
   <p>some text...</p>
 </Callout>
@@ -45,11 +45,8 @@
 
 **`HoverBlurCard`**
 
-```ts
-<HoverBlurCard
-  imgSrc="/images/background.jpg"
-  imgAlt="background"
->
+```js
+<HoverBlurCard imgSrc="/images/background.jpg" imgAlt="background">
   <h2>title</h2>
   <p>description</p>
 </HoverBlurCard>
@@ -60,12 +57,8 @@
 
 **`MediaObjectCard`**
 
-```ts
-<MediaObjectCard
-  type="avatar"
-  imgSrc="/images/avatar.jpg"
-  imgAlt="user avatar"
->
+```js
+<MediaObjectCard type="avatar" imgSrc="/images/avatar.jpg" imgAlt="user avatar">
   <h2>{user.name}</h2>
   <p>{user.message}</p>
 </MediaObjectCard>
@@ -76,7 +69,7 @@
 
 **`Toggle`**
 
-```ts
+```js
 <Toggle
   hasPlaceholder={true}
   showContentButtonText="add",
