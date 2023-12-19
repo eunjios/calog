@@ -8,7 +8,7 @@ interface Props {
   createdAt: string;
 }
 
-const User: React.FC<Props> = ({ avatar, username, createdAt }: Props) => {
+function User({ avatar, username, createdAt }: Props) {
   const date = formattedDate(createdAt);
   return (
     <MediaObjectCard type="avatar" imgSrc={avatar} imgAlt={username}>
@@ -16,6 +16,6 @@ const User: React.FC<Props> = ({ avatar, username, createdAt }: Props) => {
       <p className={classes.date}>{date}</p>
     </MediaObjectCard>
   );
-};
+}
 
 export default User;

@@ -7,7 +7,7 @@ import selectedDate from '@/recoil/date/atom';
 // import classes from './Todo.module.css';
 import todoState from '@/recoil/todo-list/atom';
 
-const Todo = () => {
+function Todo() {
   const { totalCount, uncompletedTodoList, completedTodoList } =
     useRecoilValue(todoStats);
   const date = useRecoilValue(selectedDate);
@@ -18,10 +18,7 @@ const Todo = () => {
   if (totalCount === 0) {
     return (
       <Callout>
-        {/* <div style={{ maxHeight: '80px' }}> */}
         <NewTodo key={date} />
-        {/* <div className={classes.empty}>오늘은 할 일이 없어요</div> */}
-        {/* </div> */}
       </Callout>
     );
   }
@@ -42,6 +39,6 @@ const Todo = () => {
       ))}
     </Callout>
   );
-};
+}
 
 export default Todo;

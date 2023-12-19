@@ -7,7 +7,7 @@ interface Props {
   hasToggle?: boolean;
 }
 
-const Callout: React.FC<Props> = ({ children, hasToggle = false }: Props) => {
+function Callout({ children, hasToggle = false }: Props) {
   const [isOpen, setIsOpen] = useState(true);
   const icon = isOpen ? (
     <MdKeyboardArrowUp size={20} fill="#aeaeae" />
@@ -30,6 +30,6 @@ const Callout: React.FC<Props> = ({ children, hasToggle = false }: Props) => {
       )}
     </section>
   );
-};
+}
 
 export default Callout;

@@ -7,7 +7,7 @@ interface Props {
   post: PostInfo;
 }
 
-const Post: React.FC<Props> = (props: Props) => {
+function Post(props: Props) {
   const { id, title, image, description } = props.post;
 
   return (
@@ -20,6 +20,6 @@ const Post: React.FC<Props> = (props: Props) => {
       </li>
     </Link>
   );
-};
+}
 
 export default Post;

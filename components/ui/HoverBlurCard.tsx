@@ -9,13 +9,8 @@ interface Props {
   children?: React.ReactNode;
 }
 
-const HoverBlurCard: React.FC<Props> = ({
-  imgSrc,
-  imgAlt,
-  href,
-  children,
-}: Props) => {
-  const Card = (
+function HoverBlurCard({ imgSrc, imgAlt, href, children }: Props) {
+  const card = (
     <div className={classes.container}>
       <div className={classes.card}>
         <Image
@@ -30,10 +25,10 @@ const HoverBlurCard: React.FC<Props> = ({
   );
 
   if (href) {
-    return <Link href={href}>{Card}</Link>;
+    return <Link href={href}>{card}</Link>;
   } else {
-    return Card;
+    return card;
   }
-};
+}
 
 export default HoverBlurCard;

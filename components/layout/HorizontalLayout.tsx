@@ -8,13 +8,13 @@ interface Props {
   children: React.ReactNode;
 }
 
-const HorizontalLayout: React.FC<Props> = ({ children }) => {
+function HorizontalLayout({ children }: Props) {
   return (
     <div className={classes.layout}>
       <MainNavigation />
       <main className={classes.main}>{children}</main>
     </div>
   );
-};
+}
 
 export default HorizontalLayout;

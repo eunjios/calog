@@ -9,7 +9,7 @@ interface Props {
   posts: PostInfo[];
 }
 
-const Calog: React.FC<Props> = ({ posts }: Props) => {
+function Calog({ posts }: Props) {
   return (
     <RecoilRoot>
       <PostCalendar />
@@ -23,6 +23,6 @@ const Calog: React.FC<Props> = ({ posts }: Props) => {
       </div>
     </RecoilRoot>
   );
-};
+}
 
 export default Calog;

@@ -13,11 +13,11 @@ interface Props {
   hideContentButtonText?: string;
 }
 
-const ToggleVisibleButton: React.FC<Props> = ({
+function ToggleVisibleButton({
   children,
   showContentButtonText = '추가',
   hideContentButtonText = '취소',
-}: Props) => {
+}: Props) {
   const { isVisible, toggle, hide } = useToggleVisibility();
 
   useEscKey(hide);
@@ -32,6 +32,6 @@ const ToggleVisibleButton: React.FC<Props> = ({
       </AbsoluteContainer>
     </OutsideClickHandler>
   );
-};
+}
 
 export default ToggleVisibleButton;

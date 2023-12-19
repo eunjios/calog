@@ -6,7 +6,7 @@ interface Props {
   post: PostInfo;
 }
 
-const PostDetail: React.FC<Props> = ({ post }: Props) => {
+function PostDetail({ post }: Props) {
   const { title, image, description } = post;
   const { author } = post;
 
@@ -22,6 +22,6 @@ const PostDetail: React.FC<Props> = ({ post }: Props) => {
       <p className={classes.content}>{description}</p>
     </section>
   );
-};
+}
 
 export default PostDetail;

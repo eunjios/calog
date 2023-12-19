@@ -12,11 +12,11 @@ interface BtnProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
 }
 
-const Button: React.FC<BtnProps> = ({ children, ...props }: BtnProps) => {
+const Button = ({ children, ...props }: BtnProps) => {
   return <button {...props}>{children}</button>;
 };
 
-const Toggle: React.FC<Props> = ({
+const Toggle = ({
   children,
   initialVisibility = false,
   OpenButton = Button,

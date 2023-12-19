@@ -5,7 +5,7 @@ import { MdCheckBoxOutlineBlank } from 'react-icons/md';
 import { Form, Input } from './NewTodo.style';
 import ToggleVisibleButton from '../ui/ToggleVisibleButton';
 
-const NewTodo = () => {
+function NewTodo() {
   const todoTextRef = useRef<HTMLInputElement>(null);
   const { add } = useRecoilValue(todoRepo);
 
@@ -26,6 +26,6 @@ const NewTodo = () => {
       </Form>
     </ToggleVisibleButton>
   );
-};
+}
 
 export default NewTodo;

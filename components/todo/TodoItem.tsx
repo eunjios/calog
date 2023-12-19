@@ -9,7 +9,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-const TodoItem: React.FC<Props> = ({ id, done, children }: Props) => {
+function TodoItem({ id, done, children }: Props) {
   const { toggle } = useRecoilValue(todoRepo);
   const Icon = done ? MdCheckBox : MdCheckBoxOutlineBlank;
   const className = done
@@ -22,6 +22,6 @@ const TodoItem: React.FC<Props> = ({ id, done, children }: Props) => {
       {children}
     </li>
   );
-};
+}
 
 export default TodoItem;

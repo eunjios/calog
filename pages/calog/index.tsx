@@ -3,7 +3,7 @@ import Calog from '../../components/posts/Calog';
 import { DUMMY_POSTS } from '../../utils/data';
 import Head from 'next/head';
 
-const PostsPage: React.FC = () => {
+function PostsPage() {
   return (
     <>
       <Head>
@@ -18,6 +18,6 @@ const PostsPage: React.FC = () => {
       </HorizontalLayout>
     </>
   );
-};
+}
 
 export default PostsPage;

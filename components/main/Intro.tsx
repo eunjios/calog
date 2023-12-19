@@ -1,10 +1,14 @@
 import classes from './Intro.module.css';
 import HoverBlurCard from '../ui/HoverBlurCard';
 
-const Intro = () => {
+function Intro() {
   return (
     <div className={classes.layout}>
-      <HoverBlurCard imgSrc="/images/main.jpg" alt="calog 선택" href="/calog">
+      <HoverBlurCard
+        imgSrc="/images/main.jpg"
+        imgAlt="calog 선택"
+        href="/calog"
+      >
         <h2 className={classes.logo}>calog</h2>
         <p className={classes.text}>
           is a personal blog service that records with a calendar.
@@ -12,6 +16,6 @@ const Intro = () => {
       </HoverBlurCard>
     </div>
   );
-};
+}
 
 export default Intro;

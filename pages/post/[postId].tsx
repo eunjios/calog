@@ -9,7 +9,7 @@ interface Props {
   post: PostInfo;
 }
 
-const PostDetailPage: React.FC<Props> = ({ post }: Props) => {
+function PostDetailPage({ post }: Props) {
   const { title, description } = post;
   return (
     <>
@@ -22,7 +22,7 @@ const PostDetailPage: React.FC<Props> = ({ post }: Props) => {
       </Layout>
     </>
   );
-};
+}
 
 export const getStaticPaths: GetStaticPaths = () => {
   return {

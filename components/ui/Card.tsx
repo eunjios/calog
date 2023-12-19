@@ -4,8 +4,8 @@ interface Props {
   children: React.ReactNode;
 }
 
-const Card: React.FC<Props> = ({ children }: Props) => {
+function Card({ children }: Props) {
   return <div className={classes.card}>{children}</div>;
-};
+}
 
 export default Card;
