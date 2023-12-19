@@ -14,11 +14,12 @@ function Todo() {
 
   const state = useRecoilValue(todoState);
   console.log(state);
+  console.log('totalCount', totalCount);
 
   if (totalCount === 0) {
     return (
       <Callout>
-        <NewTodo key={date} />
+        <NewTodo key={date} hasPlaceholder={true} />
       </Callout>
     );
   }

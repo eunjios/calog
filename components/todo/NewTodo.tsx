@@ -3,9 +3,13 @@ import { FormEventHandler, useRef } from 'react';
 import { useRecoilValue } from 'recoil';
 import { MdCheckBoxOutlineBlank } from 'react-icons/md';
 import { Form, Input } from './NewTodo.style';
-import ToggleVisibleButton from '../ui/ToggleVisibleButton';
+import Toggle from '../ui/toggle/Toggle';
 
-function NewTodo() {
+interface Props {
+  hasPlaceholder?: boolean;
+}
+
+function NewTodo({ hasPlaceholder = false }: Props) {
   const todoTextRef = useRef<HTMLInputElement>(null);
   const { add } = useRecoilValue(todoRepo);
 
@@ -19,12 +23,12 @@ function NewTodo() {
   };
 
   return (
-    <ToggleVisibleButton>
+    <Toggle hasPlaceholder={hasPlaceholder}>
       <Form onSubmit={submitHandler}>
         <MdCheckBoxOutlineBlank size={18} fill="#666" />
         <Input type="text" ref={todoTextRef} />
       </Form>
-    </ToggleVisibleButton>
+    </Toggle>
   );
 }
 

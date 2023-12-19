@@ -1,14 +1,20 @@
 import styled from '@emotion/styled';
 
 export const AbsoluteContainer = styled.div`
-  display: inline-block;
   position: absolute;
-  top: 20px;
+  top: 24px;
   right: 24px;
 `;
 
 export const Content = styled.div`
   width: 100%;
+`;
+
+export const Placeholder = styled.p`
+  color: #aeaeae;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 28px;
 `;
 
 export const Button = styled.button`

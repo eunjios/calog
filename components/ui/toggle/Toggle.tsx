@@ -1,51 +1,49 @@
-// TEST
-import { useState } from 'react';
+import OutsideClickHandler from 'react-outside-click-handler';
+import {
+  AbsoluteContainer,
+  Content,
+  Button,
+  Placeholder,
+} from './Toggle.style';
+import useToggleVisibility from '@/hooks/useToggleVisibility';
+import useEscKey from '@/hooks/useEscKey';
 
 interface Props {
   children: React.ReactNode;
-  initialVisibility?: boolean;
-  OpenButton?: React.FC<BtnProps>;
-  CloseButton?: React.FC<BtnProps>;
+  showContentButtonText?: string;
+  hideContentButtonText?: string;
+  hasPlaceholder?: boolean;
+  placeholderText?: string;
 }
 
-interface BtnProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  children: React.ReactNode;
-}
-
-const Button = ({ children, ...props }: BtnProps) => {
-  return <button {...props}>{children}</button>;
-};
-
-const Toggle = ({
+function Toggle({
   children,
-  initialVisibility = false,
-  OpenButton = Button,
-  CloseButton = Button,
-}: Props) => {
-  const [isVisible, setIsVisible] = useState(initialVisibility);
+  showContentButtonText = '추가',
+  hideContentButtonText = '취소',
+  hasPlaceholder = false,
+  placeholderText = '오늘은 할 일이 없어요',
+}: Props) {
+  const { isVisible, toggle, hide } = useToggleVisibility();
 
-  const toggle = () => {
-    setIsVisible((prev) => !prev);
-  };
+  useEscKey(hide);
 
-  if (!isVisible) {
-    return (
-      <div>
-        <div>
-          <OpenButton onClick={toggle}>추가</OpenButton>
-        </div>
-      </div>
-    );
-  } else {
-    return (
-      <div>
-        <div>{children}</div>
-        <div>
-          <CloseButton onClick={toggle}>취소</CloseButton>
-        </div>
-      </div>
-    );
+  let content;
+  if (isVisible) {
+    content = children;
+  } else if (hasPlaceholder) {
+    content = <Placeholder>{placeholderText}</Placeholder>;
   }
-};
+
+  return (
+    <OutsideClickHandler onOutsideClick={hide}>
+      {content && <Content>{content}</Content>}
+      <AbsoluteContainer>
+        <Button onClick={toggle}>
+          {isVisible ? hideContentButtonText : showContentButtonText}
+        </Button>
+      </AbsoluteContainer>
+    </OutsideClickHandler>
+  );
+}
 
 export default Toggle;
