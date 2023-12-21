@@ -1,7 +1,16 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-const useToggleVisibility = (initialVisibility = false) => {
+const useToggleVisibility = (
+  callbackFn?: () => void,
+  initialVisibility = false
+) => {
   const [isVisible, setIsVisible] = useState(initialVisibility);
+
+  useEffect(() => {
+    if (callbackFn) {
+      callbackFn();
+    }
+  }, [isVisible, callbackFn]);
 
   const toggle = () => {
     setIsVisible((prev) => !prev);

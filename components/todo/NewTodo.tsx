@@ -1,5 +1,5 @@
 import { todoRepo } from '@/recoil/todo-list/selectors';
-import { FormEventHandler, useRef } from 'react';
+import { FormEventHandler, useCallback, useRef } from 'react';
 import { useRecoilValue } from 'recoil';
 import { MdCheckBoxOutlineBlank } from 'react-icons/md';
 import { Form, Input } from './NewTodo.style';
@@ -22,8 +22,12 @@ function NewTodo({ hasPlaceholder = false }: Props) {
     }
   };
 
+  const focusInput = useCallback(() => {
+    todoTextRef.current?.focus();
+  }, []);
+
   return (
-    <Toggle hasPlaceholder={hasPlaceholder}>
+    <Toggle hasPlaceholder={hasPlaceholder} callbackFn={focusInput}>
       <Form onSubmit={submitHandler}>
         <MdCheckBoxOutlineBlank size={18} fill="#666" />
         <Input type="text" ref={todoTextRef} />

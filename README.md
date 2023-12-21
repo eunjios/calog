@@ -85,6 +85,7 @@
 
 - 컨텐츠의 visibility를 컨트롤 하는 버튼이 포함된 컨테이너
 - 버튼 및 placeholder 커스텀 가능
+- `callbackFn` : toggle 버튼 누를 때마다 실행할 콜백 함수 지정
 
 ### Custom Hooks
 

@@ -14,6 +14,7 @@ interface Props {
   hideContentButtonText?: string;
   hasPlaceholder?: boolean;
   placeholderText?: string;
+  callbackFn?: () => void; // toggle 버튼 누를 때마다 실행될 콜백 함수
 }
 
 function Toggle({
@@ -22,8 +23,9 @@ function Toggle({
   hideContentButtonText = '취소',
   hasPlaceholder = false,
   placeholderText = '오늘은 할 일이 없어요',
+  callbackFn,
 }: Props) {
-  const { isVisible, toggle, hide } = useToggleVisibility();
+  const { isVisible, toggle, hide } = useToggleVisibility(callbackFn);
 
   useEscKey(hide);
 
