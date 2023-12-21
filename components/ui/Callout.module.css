@@ -6,6 +6,7 @@
   border-radius: 24px;
   position: relative;
   padding-right: 64px; /* 버튼에 가리지 않게 */
+  flex-shrink: 0;
 }
 
 .content {

@@ -14,7 +14,6 @@
   max-width: 1024px;
   height: calc(100% - 80px);
   min-height: 512px;
-  padding-bottom: 8px;
 }
 
 .main div:nth-child(1) {
