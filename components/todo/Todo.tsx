@@ -4,17 +4,11 @@ import TodoItem from './TodoItem';
 import { todoStats } from '../../recoil/todo-list/selectors';
 import NewTodo from './NewTodo';
 import selectedDate from '@/recoil/date/atom';
-// import classes from './Todo.module.css';
-import todoState from '@/recoil/todo-list/atom';
 
 function Todo() {
   const { totalCount, uncompletedTodoList, completedTodoList } =
     useRecoilValue(todoStats);
   const date = useRecoilValue(selectedDate);
-
-  const state = useRecoilValue(todoState);
-  console.log(state);
-  console.log('totalCount', totalCount);
 
   if (totalCount === 0) {
     return (

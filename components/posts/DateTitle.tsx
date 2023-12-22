@@ -7,7 +7,6 @@ function DateTitle() {
   const date = useRecoilValue(selectedDate);
   const { totalCount } = useRecoilValue(todoStats);
   const formattedDate = moment(date).format('YYYY년 MM월 D일');
-  console.log(date);
   return (
     <div>
       <h2>{formattedDate}</h2>
