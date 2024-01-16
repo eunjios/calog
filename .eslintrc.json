@@ -21,6 +21,7 @@
   },
   "plugins": ["react", "@typescript-eslint", "prettier"],
   "rules": {
+    "react/no-unknown-property": ["error", { "ignore": ["css"] }],
     "react/react-in-jsx-scope": "off", // import React from 'react' OFF
     "@typescript-eslint/no-unused-vars": "error", // 안 쓰는 변수 사용시 ERROR
     "@typescript-eslint/no-explicit-any": "error" // any 사용시 ERROR
