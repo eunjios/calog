@@ -1,9 +1,9 @@
 export interface PostInfo {
-  id: number;
+  id: string;
   title: string;
   description: string;
   image: string;
-  createdAt: string;
+  date: string;
   author: UserInfo;
 }
 

@@ -1,7 +1,6 @@
+import Head from 'next/head';
 import HorizontalLayout from '@/components/layout/HorizontalLayout';
 import Calog from '../../components/posts/Calog';
-import { DUMMY_POSTS } from '../../utils/data';
-import Head from 'next/head';
 
 function PostsPage() {
   return (
@@ -14,7 +13,7 @@ function PostsPage() {
         />
       </Head>
       <HorizontalLayout>
-        <Calog posts={DUMMY_POSTS} />
+        <Calog />
       </HorizontalLayout>
     </>
   );

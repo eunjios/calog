@@ -7,14 +7,15 @@ function NewPost() {
   return (
     <div
       css={css`
+        display: flex;
+        justify-content: end;
         width: 100%;
         padding-right: 24px;
-        margin-bottom: 16px;
         text-align: right;
       `}
     >
       <Link css={[smallBtn]} href="/new">
-        기록하기
+        글쓰기
       </Link>
     </div>
   );

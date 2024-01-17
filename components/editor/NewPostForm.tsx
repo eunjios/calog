@@ -1,19 +1,19 @@
 import Image from 'next/image';
-import useImagePicker from '@/hooks/useImagePicker';
 import ImagePicker from './ImagePicker';
 import { Container, Content, Text, Title } from './NewPostForm.style';
 import EditorLayout from './Layout';
+import useNewPost from '@/hooks/useNewPost';
 
 function NewPostForm() {
-  const { pickedImage, pickImage } = useImagePicker();
+  const { titleRef, textRef, pickedImage, pickImage, publish } = useNewPost();
 
   return (
-    <EditorLayout publish={() => {}}>
+    <EditorLayout publish={publish}>
       <Container>
         <form>
           {/* 제목 */}
           <Title>
-            <input type="text" placeholder="제목" />
+            <input type="text" placeholder="제목" ref={titleRef} />
           </Title>
           {/* 본문 */}
           <Content>
@@ -29,7 +29,11 @@ function NewPostForm() {
               />
             )}
             <Text>
-              <textarea rows={15} placeholder="오늘 하루를 기록해 보세요..." />
+              <textarea
+                rows={15}
+                placeholder="오늘 하루를 기록해 보세요..."
+                ref={textRef}
+              />
             </Text>
           </Content>
         </form>
