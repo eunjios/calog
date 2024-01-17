@@ -1,15 +1,19 @@
-import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import PostDetail from '../../components/posts/PostDetail';
-import { DUMMY_POSTS } from '../../utils/data';
-import { PostInfo } from '../../types';
 import Layout from '@/components/layout/Layout';
+import { useRecoilValue } from 'recoil';
+import { selectedPostList } from '@/recoil/posts/selectors';
+import { useRouter } from 'next/router';
 
-interface Props {
-  post: PostInfo;
-}
+function PostDetailPage() {
+  const router = useRouter();
+  const posts = useRecoilValue(selectedPostList);
+  const id = router.query.postId;
+  const post = posts.find((post) => post.id === id);
 
-function PostDetailPage({ post }: Props) {
+  if (!post) {
+    throw new Error('해당 포스트가 없음');
+  }
   const { title, description } = post;
   return (
     <>
@@ -23,25 +27,5 @@ function PostDetailPage({ post }: Props) {
     </>
   );
 }
-
-export const getStaticPaths: GetStaticPaths = () => {
-  return {
-    paths: DUMMY_POSTS.map((post) => ({
-      params: { postId: post.id.toString() },
-    })),
-    fallback: 'blocking',
-  };
-};
-
-export const getStaticProps: GetStaticProps = async (ctx) => {
-  const id = ctx.params?.postId;
-  const selectedPost = DUMMY_POSTS.find((post) => post.id.toString() === id);
-
-  return {
-    props: {
-      post: selectedPost,
-    },
-  };
-};
 
 export default PostDetailPage;
