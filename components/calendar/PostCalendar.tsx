@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import moment from 'moment';
 import Calendar, { OnClickFunc } from 'react-calendar';
-import { useRecoilValue, useSetRecoilState } from 'recoil';
-import selectedDate from '../../recoil/date/atom';
-import { Dot, Empty } from './TileContent';
+import { useRecoilState, useRecoilValue } from 'recoil';
 import todoState from '@/recoil/todo-list/atom';
+import postState from '@/recoil/posts/atom';
+import selectedDate from '@/recoil/date/atom';
+import Dot from './TileContent';
 import { dateToString } from '@/utils';
 
 type ValuePiece = Date | null;
@@ -12,11 +13,20 @@ type ValuePiece = Date | null;
 type Value = ValuePiece | [ValuePiece, ValuePiece];
 
 const PostCalendar = () => {
-  const [value, onChange] = useState<Value>(new Date());
-  const setDate = useSetRecoilState(selectedDate);
+  const [date, setDate] = useRecoilState(selectedDate);
   const todoList = useRecoilValue(todoState);
+  const postList = useRecoilValue(postState);
+  const [value, onChange] = useState<Value>(moment(date, 'YYYYMMDD').toDate());
 
   const weekDays = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
+
+  const hasTodo = (date: string) => {
+    return todoList.some((x) => x.date === date);
+  };
+
+  const hasPost = (date: string) => {
+    return postList.some((x) => x.date === date);
+  };
 
   const clickDayHandler: OnClickFunc = (value) => {
     const dateString = dateToString(value);
@@ -39,14 +49,15 @@ const PostCalendar = () => {
         formatMonthYear={(locale, date) => moment(date).format('MMMM YYYY')}
         formatShortWeekday={(locale, date) => weekDays[date.getDay()]}
         tileContent={({ date }) => {
-          const html = [];
           const dateString = dateToString(date);
-
-          if (todoList.find((x) => x.date === dateString)) {
-            html.push(<Dot key={dateString} />);
-          } else {
-            html.push(<Empty key={dateString} />);
-          }
+          const html = [];
+          html.push(
+            <Dot
+              key={dateString}
+              hasTodo={hasTodo(dateString)}
+              hasPost={hasPost(dateString)}
+            />
+          );
           return (
             <div className="flex justify-center items-center absoluteDiv">
               {html}
