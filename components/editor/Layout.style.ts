@@ -17,13 +17,14 @@ export const Main = styled.main`
     background: transparent;
   }
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     width: fit-content;
   }
 `;
 
 export const Header = styled.header`
   font-family: 'Afacad';
+  font-weight: 500;
   width: 100%;
   height: 80px;
   display: flex;
@@ -40,15 +41,16 @@ export const Header = styled.header`
 
 export const PublishBtn = styled.button`
   font-family: 'Afacad';
+  font-weight: 500;
   padding: 6px 12px;
   border-radius: 16px;
-  background: #ed6f6f;
+  background: var(--primary1);
   color: #fff;
   border: none;
   cursor: pointer;
 
   &:hover,
   :active {
-    background-color: #d85959;
+    background-color: var(--primary2);
   }
 `;

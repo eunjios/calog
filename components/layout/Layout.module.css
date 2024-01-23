@@ -16,9 +16,3 @@
 .main::-webkit-scrollbar-thumb {
   background: transparent;
 }
-
-@media (max-width: 768px) {
-  .main {
-    width: fit-content;
-  }
-}
