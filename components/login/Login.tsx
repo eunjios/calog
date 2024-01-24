@@ -1,15 +1,18 @@
 import LoginForm from './LoginForm';
 import LoginFooter from './Footer';
 import Logo from '../logo/Logo';
-import { Container, Title } from './Login.style';
+import { Border, Container, Title } from './Login.style';
 
 function Login() {
   return (
     <Container>
-      <Logo fontSize="36px" />
-      <Title>로그인하고 여러분의 기록을 시작해요</Title>
-      <LoginForm />
-      <LoginFooter />
+      <Border>
+        <Logo fontSize="36px" />
+        <Title>로그인하고 여러분의 기록을 시작해요</Title>
+        <LoginForm />
+        <LoginFooter />
+        {/* <div style={{ cursor: 'pointer', height: '80px' }}></div> */}
+      </Border>
     </Container>
   );
 }

@@ -12,6 +12,13 @@ export const Container = styled.div`
   }
 `;
 
+export const Border = styled.div`
+  border-radius: 16px;
+  border: 1.6px solid #ececec;
+  padding: 48px 40px 32px;
+  min-width: 224px;
+`;
+
 export const Title = styled.h2`
   margin: 16px 0 48px 0;
   color: #333;
