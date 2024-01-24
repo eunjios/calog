@@ -30,7 +30,7 @@ export const Header = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: transparent;
+  background: transparent;
   padding: 0 5%;
   top: 0;
   left: 0;
@@ -45,12 +45,12 @@ export const PublishBtn = styled.button`
   padding: 6px 12px;
   border-radius: 16px;
   background: var(--primary1);
-  color: #fff;
+  color: var(--text-white);
   border: none;
   cursor: pointer;
 
   &:hover,
   :active {
-    background-color: var(--primary2);
+    background: var(--primary2);
   }
 `;

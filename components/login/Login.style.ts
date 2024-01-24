@@ -14,14 +14,14 @@ export const Container = styled.div`
 
 export const Border = styled.div`
   border-radius: 16px;
-  border: 1.6px solid #ececec;
+  border: 1.6px solid var(--border1);
   padding: 48px 40px 32px;
   min-width: 224px;
 `;
 
 export const Title = styled.h2`
   margin: 16px 0 48px 0;
-  color: #333;
+  color: var(--text-dark);
   font-size: 18px;
   line-height: 30px;
   word-break: keep-all;

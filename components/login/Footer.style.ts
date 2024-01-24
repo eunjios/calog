@@ -14,22 +14,22 @@ export const link = css`
   font-size: 12px;
   font-weight: 500;
   & a {
-    color: #a4a4a4;
+    color: var(--text-light);
   }
 `;
 
 export const text = css`
   font-size: 12px;
-  margin: 2px 4px;
+  margin: 2px 2px;
 `;
 
 export const base = css`
   font-weight: 400;
-  color: #a4a4a4;
+  color: var(--text-light);
 `;
 
 export const emp = css`
   font-weight: 500;
-  color: #717171;
-  border-bottom: 1px solid #717171;
+  color: var(--text-gray);
+  border-bottom: 1px solid var(--text-gray);
 `;

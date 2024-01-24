@@ -6,7 +6,7 @@
   font-size: 14px;
   line-height: 26px;
   font-weight: 500;
-  color: #333;
+  color: var(--text-dark);
   width: fit-content;
   cursor: pointer;
 }
@@ -17,7 +17,7 @@
 }
 
 .done {
-  color: #8f8f8f;
+  color: var(--text-light);
   text-decoration: line-through;
   text-decoration-thickness: 1.4px;
 }

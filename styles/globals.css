@@ -66,4 +66,24 @@ li {
   --primary0: #f38989;
   --primary1: #ed6f6f;
   --primary2: #d85959;
+
+  --background-base: #fff;
+  --background-light-gray: #f4f4f4;
+
+  --hover-white: #f8f8f8;
+  --hover-black: #2a2a2a;
+
+  --border-base: #f4f4f4;
+  --border1: #ececec;
+  --border2: #aeaeae;
+
+  --text-white: #fff;
+  --text-lighter: #aeaeae;
+  --text-light: #8f8f8f;
+  --text-gray: #666;
+  --text-dark: #333;
+  --text-base: #000;
+
+  --button-black: #111;
+  --button-light-gray: #f4f4f4;
 }

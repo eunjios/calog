@@ -13,7 +13,7 @@ export const Container = styled.div`
   margin-bottom: 8px;
   border: 1.6px solid transparent;
   border-radius: 32px;
-  background: #f4f4f4;
+  background: var(--background-light-gray);
   padding: 12px 24px;
 `;
 
@@ -23,12 +23,12 @@ export const Input = styled.input`
   border: none;
   background: transparent;
   outline: none;
-  color: #333;
+  color: var(--text-dark);
   font-family: 'Afacad';
   font-size: 16px;
 
   &::placeholder {
-    color: #aeaeae;
+    color: var(--text-lighter);
     font-size: 14px;
   }
 `;
@@ -40,14 +40,14 @@ export const Button = styled.button`
   padding: 12px 32px;
   border: 1.6px solid transparent;
   border-radius: 32px;
-  color: #fff;
+  color: var(--text-white);
   font-family: 'Afacad';
   font-size: 14px;
   font-weight: 500;
-  background: #111;
+  background: var(--button-black);
   cursor: pointer;
 
   &:hover {
-    background: #2a2a2a;
+    background: var(--hover-black);
   }
 `;

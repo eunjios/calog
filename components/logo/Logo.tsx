@@ -15,7 +15,7 @@ function Logo({ fontSize = '24px', ...props }: Props) {
     <div
       css={css`
         font-size: ${fontSize};
-        color: #333;
+        color: var(--text-dark);
         font-weight: bold;
         font-family: 'Afacad';
       `}

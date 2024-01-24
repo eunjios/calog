@@ -10,12 +10,12 @@ export const Title = styled.div`
   align-items: center;
   width: 100%;
   height: 64px;
-  border-bottom: 1.6px solid #f4f4f4;
+  border-bottom: 1.6px solid var(--border-base);
   padding: 8px;
 
   & input {
     width: 100%;
-    color: #333;
+    color: var(--text-dark);
     font-size: 28px;
     font-weight: 700;
     line-height: 48px;
@@ -24,7 +24,7 @@ export const Title = styled.div`
   }
 
   & input::placeholder {
-    color: #aeaeae;
+    color: var(--text-lighter);
     font-size: 24px;
     font-weight: 600;
     transform: translateY(-2px);
@@ -42,7 +42,7 @@ export const Text = styled.div`
     width: 100%;
     height: 100%;
     font-family: 'Noto Sans KR';
-    color: #333;
+    color: var(--text-dark);
     font-size: 16px;
     font-weight: 400;
     line-height: 26px;
@@ -51,7 +51,7 @@ export const Text = styled.div`
   }
 
   & textarea::placeholder {
-    color: #aeaeae;
+    color: var(--text-lighter);
     font-size: 14px;
   }
 `;

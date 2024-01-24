@@ -2,7 +2,7 @@
   background: transparent;
   padding: 24px 32px;
   margin-bottom: 16px;
-  border: 1.6px solid #f4f4f4;
+  border: 1.6px solid var(--border-base);
   border-radius: 24px;
   position: relative;
   padding-right: 64px; /* 버튼에 가리지 않게 */
