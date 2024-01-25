@@ -1,18 +1,21 @@
 import LoginForm from './LoginForm';
-import LoginFooter from './Footer';
 import Logo from '../logo/Logo';
-import { Border, Container, Title } from './Login.style';
+import Container from '../form/Container';
+import Header from '../form/Header';
+import Footer from '../form/Footer';
 
 function Login() {
   return (
     <Container>
-      <Border>
+      <Header>
         <Logo fontSize="36px" />
-        <Title>로그인하고 여러분의 기록을 시작해요</Title>
-        <LoginForm />
-        <LoginFooter />
-        {/* <div style={{ cursor: 'pointer', height: '80px' }}></div> */}
-      </Border>
+        <Header.Title>로그인하고 여러분의 기록을 시작해요</Header.Title>
+      </Header>
+      <LoginForm />
+      <Footer>
+        <Footer.Text>아직 회원이 아니라면?</Footer.Text>
+        <Footer.Link href="/join">회원가입하기</Footer.Link>
+      </Footer>
     </Container>
   );
 }
