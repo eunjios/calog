@@ -27,3 +27,10 @@ export interface TodoListStats {
   completedTodoList: TodoItemData[];
   uncompletedTodoList: TodoItemData[];
 }
+
+export interface JoinFormInput {
+  name: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
+}
