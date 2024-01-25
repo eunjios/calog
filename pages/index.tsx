@@ -12,7 +12,6 @@ export default function Home() {
           content="calog is a personal blog service that records with a calendar"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <Intro />
     </Layout>
