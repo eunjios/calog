@@ -7,7 +7,7 @@ function Success() {
     <div>
       <Confetti />
       <Header>
-        <Header.Title>축하합니다!</Header.Title>
+        <Header.Title>회원가입을 축하합니다!</Header.Title>
         <Header.Text>로그인하고 여러분의 하루를 기록해 보세요</Header.Text>
       </Header>
       <LoginForm />

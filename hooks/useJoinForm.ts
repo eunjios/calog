@@ -6,7 +6,7 @@ import { InputProps } from '@/components/form/Input';
 
 const useJoinForm = (submitCallbackFn?: () => void) => {
   const {
-    formState: { errors, isSubmitting },
+    formState: { errors, isSubmitting, isLoading },
     register,
     handleSubmit,
   } = useForm<JoinFormInput>({
@@ -14,8 +14,9 @@ const useJoinForm = (submitCallbackFn?: () => void) => {
     resolver: yupResolver(joinValidationSchema),
   });
 
-  const onSubmit: SubmitHandler<JoinFormInput> = (data) => {
+  const onSubmit: SubmitHandler<JoinFormInput> = async (data) => {
     // TODO: submit to server
+    await new Promise((resolve) => setTimeout(resolve, 2000));
     console.log(data);
     if (submitCallbackFn) {
       submitCallbackFn();
@@ -66,6 +67,7 @@ const useJoinForm = (submitCallbackFn?: () => void) => {
   return {
     submitHandler,
     isSubmitting,
+    isLoading,
     inputFields,
   };
 };

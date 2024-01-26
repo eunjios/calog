@@ -86,4 +86,5 @@ li {
 
   --button-black: #111;
   --button-light-gray: #f4f4f4;
+  --button-disabled: #ececec;
 }

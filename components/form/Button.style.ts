@@ -37,4 +37,5 @@ export const whiteBtn = css`
 
 export const notAllowed = css`
   cursor: not-allowed;
+  background: var(--button-disabled);
 `;
