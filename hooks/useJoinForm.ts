@@ -37,7 +37,7 @@ const useJoinForm = (submitCallbackFn?: () => void) => {
     },
     {
       name: 'email',
-      type: 'email',
+      type: 'text',
       placeholder: '이메일',
       required: true,
       theme: 'white',
