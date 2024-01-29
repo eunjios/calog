@@ -1,11 +1,12 @@
 .header {
   font-family: 'Afacad';
+  font-weight: 500;
   width: 100%;
   height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: transparent;
+  background: transparent;
   padding: 0 5%;
   top: 0;
   left: 0;
@@ -16,7 +17,7 @@
 
 .logo {
   font-size: 1.5rem;
-  color: #333;
+  color: var(--text-dark);
   font-weight: bold;
 }
 
@@ -35,7 +36,7 @@
 .header li a {
   text-decoration: none;
   font-size: 1rem;
-  color: #333;
+  color: var(--text-dark);
   padding: 6px 12px;
   border-radius: 16px;
 }
@@ -43,5 +44,5 @@
 .header li a:hover,
 .header li a:active,
 .header li a.active {
-  background-color: #f8f8f8;
+  background: var(--hover-white);
 }

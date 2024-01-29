@@ -13,9 +13,9 @@ export const Input = styled.input`
   line-height: 26px;
   font-size: 14px;
   font-weight: 500;
-  color: #333;
+  color: var(--text-dark);
   border: 0;
-  border-bottom: 1.6px solid #aeaeae;
+  border-bottom: 1.6px solid var(--border2);
   outline: none;
   background: transparent;
 `;

@@ -11,7 +11,7 @@ export const Content = styled.div`
 `;
 
 export const Placeholder = styled.p`
-  color: #aeaeae;
+  color: var(--text-lighter);
   font-size: 12px;
   font-weight: 500;
   line-height: 28px;
@@ -22,8 +22,8 @@ export const Button = styled.button`
   padding: 4px 8px;
   font-size: 12px;
   font-weight: 500;
-  background: #f4f4f4;
-  color: #000;
+  background: var(--background-light-gray);
+  color: var(--text-base);
   border: 0;
   border-radius: 24px;
   cursor: pointer;

@@ -12,6 +12,6 @@ export const GradientContainer = styled.div`
     left: 0;
     width: 100%;
     height: 40px;
-    background: linear-gradient(180deg, transparent 0, #fff 60%);
+    background: linear-gradient(180deg, transparent 0, var(--text-white) 60%);
   }
 `;
