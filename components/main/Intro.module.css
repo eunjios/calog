@@ -8,13 +8,14 @@
 .logo {
   font-family: 'Afacad';
   font-size: 42px;
-  color: #fff;
+  color: var(--text-white);
   padding: 64px 0 16px;
 }
 
 .text {
   font-family: 'Afacad';
+  font-weight: 500;
   font-size: 28px;
   line-height: 42px;
-  color: #fff;
+  color: var(--text-white);
 }

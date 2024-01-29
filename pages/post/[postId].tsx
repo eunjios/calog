@@ -1,9 +1,9 @@
 import Head from 'next/head';
-import PostDetail from '../../components/posts/PostDetail';
-import Layout from '@/components/layout/Layout';
+import { useRouter } from 'next/router';
 import { useRecoilValue } from 'recoil';
 import { selectedPostList } from '@/recoil/posts/selectors';
-import { useRouter } from 'next/router';
+import PostDetail from '../../components/posts/PostDetail';
+import Layout from '@/components/layout/Layout';
 
 function PostDetailPage() {
   const router = useRouter();
@@ -14,6 +14,7 @@ function PostDetailPage() {
   if (!post) {
     throw new Error('해당 포스트가 없음');
   }
+
   const { title, description } = post;
   return (
     <>

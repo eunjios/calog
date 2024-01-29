@@ -17,19 +17,20 @@ export const Main = styled.main`
     background: transparent;
   }
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     width: fit-content;
   }
 `;
 
 export const Header = styled.header`
   font-family: 'Afacad';
+  font-weight: 500;
   width: 100%;
   height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: transparent;
+  background: transparent;
   padding: 0 5%;
   top: 0;
   left: 0;
@@ -40,15 +41,16 @@ export const Header = styled.header`
 
 export const PublishBtn = styled.button`
   font-family: 'Afacad';
+  font-weight: 500;
   padding: 6px 12px;
   border-radius: 16px;
-  background: #ed6f6f;
-  color: #fff;
+  background: var(--primary1);
+  color: var(--text-white);
   border: none;
   cursor: pointer;
 
   &:hover,
   :active {
-    background-color: #d85959;
+    background: var(--primary2);
   }
 `;

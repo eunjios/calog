@@ -18,6 +18,7 @@ function HoverBlurCard({ imgSrc, imgAlt, href, children }: Props) {
           alt={imgAlt ?? '카드 이미지'}
           width={360}
           height={360}
+          priority
         />
       </div>
       <div className={classes.content}>{children}</div>
