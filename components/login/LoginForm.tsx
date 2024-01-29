@@ -1,41 +1,33 @@
-import { useForm, SubmitHandler } from 'react-hook-form';
+import { useRouter } from 'next/router';
 import { FaUser, FaLock } from 'react-icons/fa6';
 import Button from '../form/Button';
 import Input from '../form/Input';
-
-interface FormInput {
-  username: string;
-  password: string;
-}
+import useLoginForm from '@/hooks/useLoginForm';
 
 function LoginForm() {
+  const router = useRouter();
+
   // TODO: 로그인 로직
-  const { register, handleSubmit } = useForm<FormInput>();
-  const onSubmit: SubmitHandler<FormInput> = (data) => console.log(data);
+  const { submitHandler, inputFields, isSubmitting } = useLoginForm(() =>
+    router.push('/calog')
+  );
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={submitHandler}>
       <div>
-        <Input
-          icon={<FaUser color="var(--primary1)" />}
-          name="username"
-          type="text"
-          placeholder="아이디"
-          register={register}
-          required
-        />
-        <Input
-          icon={<FaLock color="var(--primary1)" />}
-          name="password"
-          type="password"
-          placeholder="비밀번호"
-          register={register}
-          required
-        />
+        {inputFields.map((input) => {
+          const icon =
+            input.name === 'email' ? (
+              <FaUser color="var(--primary1)" />
+            ) : (
+              <FaLock color="var(--primary1)" />
+            );
+          return <Input key={input.name} icon={icon} {...input} />;
+        })}
       </div>
       <div>
         {/* <input type="checkbox" /> 로그인 유지 */}
-        <Button>로그인하기</Button>
+        <Button disabled={isSubmitting}>로그인하기</Button>
       </div>
     </form>
   );

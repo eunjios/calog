@@ -25,3 +25,14 @@ export const joinValidationSchema = yup.object().shape({
     .oneOf([yup.ref('password')], '비밀번호가 일치하지 않아요')
     .required('비밀번호를 다시 입력해 주세요'),
 });
+
+export const loginValidationSchema = yup.object().shape({
+  email: yup
+    .string()
+    .matches(
+      /^\w+([.-]?\w+)@\w+([.-]?\w+)(\.\w{2,3})+$/,
+      '올바른 이메일 형식을 입력하세요'
+    )
+    .required('이메일을 입력해 주세요'),
+  password: yup.string().required('비밀번호를 입력해 주세요'),
+});

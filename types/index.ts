@@ -34,3 +34,8 @@ export interface JoinFormInput {
   password: string;
   confirmPassword: string;
 }
+
+export interface LoginFormInput {
+  email: string;
+  password: string;
+}
