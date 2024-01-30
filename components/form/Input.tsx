@@ -1,12 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
 import { HTMLInputTypeAttribute } from 'react';
-import {
-  UseFormRegister,
-  RegisterOptions,
-  FieldValues,
-  Path,
-} from 'react-hook-form';
+import { UseFormRegister, FieldValues, Path } from 'react-hook-form';
 
 import { container, gray, input, invalid, msg, white } from './Input.style';
 
@@ -22,8 +17,6 @@ export interface InputProps<TFormInput extends FieldValues = FieldValues> {
    */
   name: Path<TFormInput>;
   register: UseFormRegister<TFormInput>;
-  registerOptions?: RegisterOptions;
-  required?: boolean;
 
   /**
    * input properties
@@ -42,7 +35,6 @@ function Input<TFormInput extends FieldValues = FieldValues>({
   icon,
   name,
   register,
-  required = false,
   theme = 'gray',
   message,
   ...props
@@ -54,7 +46,7 @@ function Input<TFormInput extends FieldValues = FieldValues>({
     <>
       <div css={[container, color, warning]}>
         {icon}
-        <input css={input} {...register(name, { required })} {...props} />
+        <input css={input} {...register(name)} {...props} />
       </div>
       {message && <p css={msg}>{message}</p>}
     </>
